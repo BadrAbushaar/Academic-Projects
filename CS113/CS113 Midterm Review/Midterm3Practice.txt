@@ -1,0 +1,107 @@
+A "C"
+B 
+A 
+E "C"
+C "D"
+A "E"
+D 
+C 
+D "A"
+E
+
+public class Grade {
+	private int numGrade;
+	private char letterGrade;
+		
+	public Grade(int numGrade) {
+		this.numGrade = numGrade;
+		if (numGrade > 65)
+			letterGrade = 'S';
+		else
+			letterGrade = 'U';
+	}
+	
+	public int getNumGrade() { return numGrade; }
+	public char getLetterGrade() {return letterGrade; }
+	
+	public void setNumGrade(int numGrade) { this.numGrade = numGrade; }
+	public void setLetterGrade(char letterGrade) { this.letterGrade = letterGrade; }
+	
+	public String toString() { return "Number Grade: " + numGrade + ", Letter Grade: " + letterGrade; }
+	
+	public boolean isSatisfactory() {
+		if (this.letterGrade.equals('S'))
+			return true;
+		else
+			return false;
+	}
+	public boolean equals(Grade otherGrade) {
+		return this.letterGrade.getLetterGrade().equals(otherGrade.getLetterGrade());
+	}
+}
+
+
+import java.util.*;
+public class GradesTest {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.println("Enter a score: ");
+		int userScore = scan.nextInt();
+		Grade entry = new Grade(userScore);
+		System.out.println(entry);
+		
+		Grade grade = new Grade((int)(Math.random() * 61) + 40);
+		System.out.println(grade);
+		int count = 0;
+		
+		while (grade.equals(entry) {
+			if (grade.getNumGrade() > entry.getNumGrade()) {
+				count++;
+			grade = new Grade((int)(Math.random() * 61) + 40);
+			System.out.println(grade);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

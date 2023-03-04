@@ -1,0 +1,99 @@
+D ✓
+E ✓
+D ✓
+D "C"
+D ✓
+A ✓
+A ✓
+B ✓
+D "A"
+A ✓
+
+public class EV {
+
+    private int range;
+    private String model;
+
+    public EV(int range, String model) {
+        this.range = range;
+        this.model = model;
+    }
+
+    public int getRange() {
+        return range;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setRange(int range) {
+        this.range = range;
+    }
+
+    public String toString() {
+        return "Range: " + range + "\nModel: " + model;
+    }
+
+    public int compareTo(EV otherEV) {
+        if (this.range > otherEV.getRange()) {
+            return 1;
+        } else if (this.range == otherEV.getRange()) {
+            return 0;
+        } else {
+            return -1;
+        }
+    }
+
+    public boolean sameModel(EV otherEV) {
+        return this.model.equals(otherEV.getModel());
+    }
+}
+
+import java.util.Scanner;
+
+public class TestEV {
+    public static void main(String[] args) {
+        System.out.println("Enter a range: ");
+        Scanner scan = new Scanner(System.in);
+        int userRange = scan.nextInt();
+        
+        System.out.println("Enter a model: ");
+        scan = new Scanner(System.in);
+        String userModel = scan.next();
+
+        EV ev1 = new EV(userRange, userModel);
+        EV ev2 = new EV((int) (Math.random() * 51) + 250, "Tesla Model S");
+
+        if (ev1.compareTo(ev2) == 1) {
+            System.out.println("\n" + ev1);
+        } else if (ev1.compareTo(ev2) == 0) {
+            System.out.println("\nsame");
+        } else {
+            System.out.println("\n" + ev2);
+        }
+
+        System.out.println("Same model?: " + ev1.sameModel(ev2));
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
